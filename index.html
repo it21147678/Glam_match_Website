@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Personalized Cosmetic Recommendations</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/10.16.4/framer-motion.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+
+</head>
+<body class="bg-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="w-10 h-10 gradient-pink rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-brain text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold text-gray-800">GlamMatch</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Home</a>
+
+                <!-- Project Scope Dropdown -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium inline-flex items-center">
+                        Project Scope
+                        <i class="fas fa-chevron-down ml-1 text-sm"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-md rounded-md w-56 z-50">
+                        <a href="#introduction" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Introduction</a>
+                        <a href="#problem" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Research Problem & Solution</a>
+                        <a href="#objectives" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Research Objectives</a>
+                        <a href="#methodology" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Methodology</a>
+                        <a href="#technologies" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Technologies</a>
+                        <a href="#outcomes" class="block px-4 py-2 text-gray-700 hover:bg-pink-100 transition">Outcomes</a>
+
+                    </div>
+                </div>
+
+                <a href="#milestones" class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Milestones</a>
+                <a href="#downloads" class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Downloads</a>
+                <a href="#team" class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Our Team</a>
+                <a href="#contact" class="text-gray-700 hover:text-pink-500 transition-colors duration-300 font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 hover:text-pink-500" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-pink-500 transition">Home</a>
+
+                <!-- Project Scope Collapsible -->
+                <div class="border-t">
+                    <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-pink-500 transition flex justify-between items-center" onclick="toggleSubmenu()">
+                        Project Scope
+                        <i class="fas fa-chevron-down ml-2" id="submenu-icon"></i>
+                    </button>
+                    <div class="pl-6 hidden" id="project-submenu">
+                        <a href="#introduction" class="block py-1 text-gray-600 hover:text-pink-500">Introduction</a>
+                        <a href="#problem" class="block py-1 text-gray-600 hover:text-pink-500">Research Problem & Solution</a>
+                        <a href="#objectives" class="block py-1 text-gray-600 hover:text-pink-500">Research Objectives</a>
+                        <a href="#methodology" class="block py-1 text-gray-600 hover:text-pink-500">Methodology</a>
+                        <a href="#technologies" class="block py-1 text-gray-600 hover:text-pink-500">Technologies</a>
+                    </div>
+                </div>
+
+                <a href="#milestones" class="block px-3 py-2 text-gray-700 hover:text-pink-500 transition">Milestones</a>
+                <a href="#downloads" class="block px-3 py-2 text-gray-700 hover:text-pink-500 transition">Downloads</a>
+                <a href="#team" class="block px-3 py-2 text-gray-700 hover:text-pink-500 transition">Our Team</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-pink-500 transition">Contact</a>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden gradient-light-pink">
+        <div class="particles" id="particles"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-500 mb-6 opacity-0" id="hero-title">
+                    Empowering Beauty Through
+                    <span class="gradient-pink bg-clip-text text-transparent">Intelligent Recommendations</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto opacity-0" id="hero-subtitle">
+                    Revolutionary AI-driven research project focused on personalized cosmetic recommendations, 
+                    featuring advanced foundation matching, lipstick color selection, and eyeliner style suggestions 
+                    tailored to individual preferences and skin tones.
+                </p>
+                
+                <div class="opacity-0" id="hero-cta">
+                    <a href="#scope" class="inline-flex items-center px-8 py-4 gradient-pink text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <span>Explore the Research</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="absolute top-1/4 left-8 float-animation" style="animation-delay: 0s;">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-palette text-pink-400 text-2xl"></i>
+                    </div>
+                </div>
+                <div class="absolute top-1/3 right-6 float-animation" style="animation-delay: 2s;">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-magic text-pink-400 text-2xl"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-1/4 left-1/4 float-animation" style="animation-delay: 4s;">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-eye text-pink-400 text-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Scope Section -->
+    <section id="scope" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Project Scope</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Revolutionizing the beauty industry through cutting-edge AI technology and personalized user experiences.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Foundation Matching -->
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105 scope-card">
+                    <div class="w-20 h-20 gradient-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Foundation Matching</h3>
+                    <p class="text-gray-600">
+                        Advanced computer vision algorithms analyze skin tone, undertones, and texture to recommend 
+                        the perfect foundation match with 95% accuracy.
+                    </p>
+                </div>
+                
+                <!-- Lipstick Color -->
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105 scope-card">
+                    <div class="w-20 h-20 gradient-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-pen text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Lipstick Matching</h3>
+                    <p class="text-gray-600">
+                        Machine learning models consider facial features, skin tone, and personal style preferences 
+                        to suggest the most flattering lipstick shades.
+                    </p>
+                </div>
+                
+                <!-- Eyeliner Style -->
+                <div class="text-center p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105 scope-card">
+                    <div class="w-20 h-20 gradient-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Eyeliner Matching</h3>
+                    <p class="text-gray-600">
+                        Eye shape recognition technology paired with trend analysis to recommend 
+                        eyeliner styles that enhance natural beauty.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Introduction Section -->
+            <div id="introduction" class="mb-5 pt-20">
+                <div class="bg-gradient-to-r from-pink-200 to-white rounded-3xl p-12 shadow-lg">
+                    <div class="max-w-4xl mx-auto">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                            <i class="fas fa-lightbulb text-pink-500 mr-3"></i>
+                            Introduction
+                        </h3>
+                        <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+                            <p>
+                                We are dedicated to revolutionizing the cosmetic experience through cutting-edge mobile application solutions. Our mission is to simplify the complex process of selecting suitable cosmetic products by harnessing the power of artificial intelligence and advanced image processing technologies.
+                            </p>
+                            <p>
+                                Our innovative platform automates the recommendation of lipstick colors, eyeliner styles, and foundation shades directly from user-uploaded photos, enabling individuals to optimize their beauty routines with greater efficiency and accuracy.
+                            </p>
+                            <p>
+                                We understand that modern beauty needs streamlined, error-free processes to thrive in today's fast-paced environment. That's why we've developed an advanced solution that not only automates cosmetic recommendations but also intelligently analyzes facial features and lighting conditions, ensuring your beauty choices are as personalized and effective as possible.
+                            </p>
+                            <p>
+                                By leveraging the latest machine learning models and semantic analysis, our solution provides a smart, intuitive way for users to visualize, refine, and perfect their cosmetic applications—saving time, reducing guesswork, and improving overall satisfaction. Whether you're a beginner or a beauty enthusiast, we're here to help you achieve seamless cosmetic optimization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem & Solution Section -->
+            <div id="problem" class="mb-5 pt-20">
+                <div class="bg-gradient-to-r from-red-50 to-pink-200 rounded-3xl p-12 shadow-lg">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                        <!-- <i class="fa-solid fa-question text-pink-500 mr-3"></i> -->
+                        Research Problem & Solution
+                    </h3>
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">                    
+                        <!-- Problem -->
+                        <div class="bg-red-50 rounded-3xl p-10 border-l-4 border-red-400 transform hover:scale-105 transition-all duration-300">
+                            <h3 class="text-3xl font-bold text-red-700 mb-6 flex items-center">
+                                <i class="fas fa-exclamation-triangle mr-3"></i>
+                                Research Problem
+                            </h3>
+                            <p class="text-lg text-gray-700 mb-6 font-semibold">
+                                How can a mobile application, utilizing advanced image processing and machine learning techniques, effectively provide personalized recommendations for lipstick colors, foundation shades, and eyeliner styles based on a user's unique facial characteristics?
+                            </p>
+                            <div class="text-gray-600 space-y-4">
+                                <p>The widespread difficulty individuals experience in effectively selecting cosmetics that genuinely complement their unique features manifests in several key challenges:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Choosing correct lipstick colors that match skin tone and lip shape</li>
+                                    <li>Selecting foundation shades that adapt to varied lighting conditions</li>
+                                    <li>Determining eyeliner styles that align with individual eye shapes</li>
+                                    <li>Absence of precise, data-driven systems leading to user frustration</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Solution -->
+                        <div class="bg-green-50 rounded-3xl p-10 border-l-4 border-green-400 transform hover:scale-105 transition-all duration-300">
+                            <h3 class="text-3xl font-bold text-green-700 mb-6 flex items-center">
+                                <i class="fas fa-lightbulb mr-3"></i>
+                                Proposed Solution
+                            </h3>
+                            <p class="text-lg text-gray-700 mb-6">
+                                A revolutionary mobile application that offers personalized cosmetic suggestions through advanced image processing and machine learning techniques.
+                            </p>
+                            <div class="space-y-4 text-gray-600">
+                                <div class="flex items-start">
+                                    <i class="fas fa-camera text-green-500 mt-1 mr-3"></i>
+                                    <p>Users upload facial photos for preprocessing and quality enhancement</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-search text-green-500 mt-1 mr-3"></i>
+                                    <p>Advanced algorithms identify crucial facial features and skin characteristics</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-brain text-green-500 mt-1 mr-3"></i>
+                                    <p>Machine learning models generate personalized cosmetic recommendations</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-mobile-alt text-green-500 mt-1 mr-3"></i>
+                                    <p>Intuitive interface presents tailored suggestions with virtual try-on features</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Objectives Section -->
+            <div id="objectives" class="mb-5 pt-20">
+                <div class="bg-gradient-to-r from-pink-200 to-white rounded-3xl p-12 shadow-lg">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+                        Research Objectives
+                    </h3>
+                    <div class="space-y-8">
+                        <!-- Objective 1 -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-pink-400 hover:shadow-xl hover:scale-105 transition-all duration-300 transform hover:scale-102">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-6 mt-1">
+                                    <span class="text-white font-bold text-xl">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-bold text-gray-800 mb-4">
+                                        Foundation Shade Recommendation
+                                    </h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Recommend accurate and inclusive foundation shades that match individual skin tones.
+                                    </p>
+                                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Analyzes facial images to detect dominant skin tone using clustering techniques</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Blends two shades when no exact match is found for personalized results</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Accounts for different lighting conditions and environmental factors</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Includes diverse dataset for global skin tone coverage</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Objective 2 -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-pink-400 hover:shadow-xl hover:scale-105 transition-all duration-300 transform hover:scale-102">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-6 mt-1">
+                                    <span class="text-white font-bold text-xl">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-bold text-gray-800 mb-4">
+                                        Personalized Lipstick Recommendations
+                                    </h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Suggest personalized lipstick shades that complement the user's lip shape, skin tones, and facial features.
+                                    </p>
+                                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Identifies lip shapes (bow, full, heart-shaped) through advanced analysis</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Detects skin tones using sophisticated color analysis algorithms</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>ML model maps features to suitable lipstick shades and finishes</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Real-time virtual try-on with adaptive user feedback integration</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Objective 3 -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-pink-400 hover:shadow-xl hover:scale-105 transition-all duration-300 transform hover:scale-102">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-6 mt-1">
+                                    <span class="text-white font-bold text-xl">3</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-bold text-gray-800 mb-4">
+                                        Eyeliner Style Suggestions
+                                    </h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Provide eyeliner style suggestions based on the user's specific eye shape and preferences.
+                                    </p>
+                                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Facial landmark detection and ML classification for eye shape analysis</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Identifies eye shapes: almond, round, hooded, monolid variations</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>AR-based virtual try-on experience for real-time visualization</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                            <span>Integrates user preferences for continuous recommendation refinement</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methodology Section -->
+            <div id="methodology" class="mb-5 pt-20">
+                <div class="bg-gradient-to-br from-purple-50 to-pink-200 rounded-3xl p-12">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+                        <i class="fas fa-cogs text-pink-500 mr-3"></i>
+                        Methodology
+                    </h3>
+                    
+                    <!-- Methodology Image Placeholder -->
+                    <div class="mb-12 text-center">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto border-2 border-dashed border-purple-300">
+                            <img src="assets/methodily.png">
+                        </div>
+                    </div>
+
+                    <div class="max-w-5xl mx-auto">
+                        <p class="text-lg text-gray-700 mb-8 text-center">
+                            The GlamMatch application employs a comprehensive methodology that integrates machine learning, 
+                            advanced image processing, and user-centric design to deliver personalized cosmetic recommendations.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Step 1 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">1</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">Image Acquisition</h4>
+                                <p class="text-gray-600 text-sm">
+                                    User-uploaded images undergo rigorous validation and normalization techniques to ensure consistent lighting and quality.
+                                </p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">2</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">Feature Detection</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Facial feature detection and segmentation using MediaPipe Face Mesh to extract relevant regions of interest.
+                                </p>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">3</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">Feature Extraction</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Specific attributes like lip geometry, eye type, and skin tone are identified through clustering and classification algorithms.
+                                </p>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">4</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">ML Prediction</h4>
+                                <p class="text-gray-600 text-sm">
+                                    CNNs and Random Forest classifiers trained on diverse datasets predict suitable cosmetic options with blending algorithms.
+                                </p>
+                            </div>
+
+                            <!-- Step 5 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">5</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">Recommendation Engine</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Cosmetic science rules applied for personalized suggestions with adaptive feedback system integration.
+                                </p>
+                            </div>
+
+                            <!-- Step 6 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                                    <span class="text-white font-bold">6</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-3">User Interface</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Intuitive mobile interface with virtual try-on features, supported by robust Python Flask backend infrastructure.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies Section -->
+            <div id="technologies" class="mb-5 pt-20">
+                <div class="bg-gradient-to-br from-blue-50 to-pink-200 rounded-3xl p-12">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+                        <i class="fas fa-microchip text-blue-500 mr-3"></i>
+                        Technologies Used
+                    </h3>
+                    
+                    <div class="max-w-6xl mx-auto">
+                        <p class="text-lg text-gray-700 mb-12 text-center">
+                            Our cutting-edge technology stack combines the latest in AI, machine learning, and mobile development 
+                            to deliver unparalleled cosmetic recommendation accuracy.
+                        </p>
+                        
+                        <!-- Technology Grid with Image Placeholders -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
+                            <!-- Tech 1 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" 
+                                    alt="Python Logo" 
+                                    class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">Python</h4>
+                                <p class="text-xs text-gray-600">Core Backend</p>
+                            </div>
+
+                            <!-- Tech 2 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://viz.mediapipe.dev/logo.png" 
+                                        alt="MediaPipe Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">MediaPipe</h4>
+                                <p class="text-xs text-gray-600">Facial Landmark Detection</p>
+                            </div>
+
+                            <!-- Tech 3 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" 
+                                        alt="OpenCV Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">OpenCV</h4>
+                                <p class="text-xs text-gray-600">Image Processing</p>
+                            </div>
+
+                            <!-- Tech 4 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png" 
+                                        alt="Flutter Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">Flutter</h4>
+                                <p class="text-xs text-gray-600">Mobile Framework</p>
+                            </div>
+
+                            <!-- Tech 5 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" 
+                                        alt="PyCharm Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">PyCharm</h4>
+                                <p class="text-xs text-gray-600">Python IDE</p>
+                            </div>
+
+                            <!-- Tech 6 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" 
+                                        alt="Flask Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">Flask</h4>
+                                <p class="text-xs text-gray-600">Web Framework</p>
+                            </div>
+
+                            <!-- Tech 7 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFTvo5Avm0OntY98pk0Z9MRvBazgVmPO-TLf2o8kXUX_Xv5SfWzApd0gCfdJFu-f6X_64&usqp=CAU" 
+                                        alt="Firebase Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">Firebase</h4>
+                                <p class="text-xs text-gray-600">Backend Services</p>
+                            </div>
+
+                            <!-- Tech 8 -->
+                            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                                <div class="w-20 h-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Android_Studio_Icon_3.6.svg" 
+                                        alt="Android Studio Logo" 
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <h4 class="font-bold text-gray-800 mb-2">Android Studio</h4>
+                                <p class="text-xs text-gray-600">Android Development</p>
+                            </div>                            
+                        </div>
+
+                        <!-- Technology Description -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Machine Learning Stack -->
+                            <div class="bg-white rounded-xl p-8 shadow-lg">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                    <i class="fas fa-brain text-blue-500 mr-3"></i>
+                                    Machine Learning Stack
+                                </h4>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>TensorFlow for deep learning model development and training</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>OpenCV for advanced image processing and computer vision</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>MediaPipe for real-time facial and hand landmark detection</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>Python used as the core backend and ML scripting language</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Development Stack -->
+                            <div class="bg-white rounded-xl p-8 shadow-lg">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                                    <i class="fas fa-mobile-alt text-purple-500 mr-3"></i>
+                                    Development Stack
+                                </h4>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>Flutter for cross-platform mobile app development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>Flask for creating RESTful backend services in Python</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>Firebase for real-time database, hosting, and authentication</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>Android Studio as the primary IDE for mobile and Flutter development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span>PyCharm for efficient Python development and debugging</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expected Outcomes Section -->
+            <div id="outcomes" class="mb-5 pt-20">
+                <div class="bg-gradient-to-br from-green-50 to-pink-200 rounded-3xl p-12">
+                    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+                        <i class="fas fa-trophy text-green-500 mr-3"></i>
+                        Expected Outcomes
+                    </h3>
+                    
+                    <div class="max-w-5xl mx-auto">
+                        <p class="text-lg text-gray-700 mb-12 text-center">
+                            GlamMatch is designed to deliver transformative results that revolutionize how users interact with cosmetic products, 
+                            providing unprecedented accuracy and personalization in beauty recommendations.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-12">
+                            <!-- Primary Outcomes -->
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-green-400">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                    <i class="fas fa-bullseye text-green-500 mr-3"></i>
+                                    Primary Outcomes
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-check text-green-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">95% Accuracy Rate</h5>
+                                            <p class="text-gray-600 text-sm">Achieve industry-leading precision in foundation shade matching through advanced color analysis algorithms</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-check text-green-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">Personalized Recommendations</h5>
+                                            <p class="text-gray-600 text-sm">Deliver tailored lipstick and eyeliner suggestions based on individual facial characteristics</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-check text-green-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">Real-time Virtual Try-on</h5>
+                                            <p class="text-gray-600 text-sm">Enable instant visualization of cosmetic products before purchase decisions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Outcomes -->
+                            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-400">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                    <i class="fas fa-chart-line text-blue-500 mr-3"></i>
+                                    Impact Metrics
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-users text-blue-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">Enhanced User Experience</h5>
+                                            <p class="text-gray-600 text-sm">Reduce product return rates by 60% through accurate pre-purchase recommendations</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-clock text-blue-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">Time Efficiency</h5>
+                                            <p class="text-gray-600 text-sm">Reduce cosmetic selection time from hours to minutes with instant AI-powered suggestions</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                            <i class="fas fa-globe text-blue-600 text-sm"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800 mb-2">Global Accessibility</h5>
+                                            <p class="text-gray-600 text-sm">Provide inclusive beauty solutions for diverse skin tones and facial features worldwide</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Milestones Section -->    
+    <section id="milestones" class="py-20 gradient-light-pink">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Research Milestones</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Key achievements and breakthroughs in our AI-driven cosmetic recommendation research.
+                </p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-300 via-pink-400 to-pink-500 rounded-full timeline-line"></div>
+                
+                <div class="space-y-12">
+                    <!-- Milestone 1 -->
+                    <div class="relative flex items-center timeline-item opacity-0" data-milestone="1">
+                        <!-- Left Content (Desktop) -->
+                        <div class="w-full md:w-5/12 md:pr-8 text-right timeline-content-left">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="flex items-center justify-end mb-4">
+                                    <h3 class="text-xl font-bold text-gray-800 mr-3">Data Collection</h3>
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-database text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Gathered 1000+ diverse skin tone samples and cosmetic preferences from users worldwide</p>
+                                <div class="flex items-center justify-end space-x-2">
+                                    <span class="text-sm text-gray-500">January 2024</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Center Circle -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 gradient-pink rounded-full flex items-center justify-center shadow-lg z-10 milestone-circle">
+                            <span class="text-white font-bold text-lg">1</span>
+                            <div class="absolute inset-0 gradient-pink rounded-full animate-ping opacity-30"></div>
+                        </div>
+                        
+                        <!-- Right Spacer (Desktop) -->
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+                    
+                    <!-- Milestone 2 -->
+                    <div class="relative flex items-center timeline-item opacity-0" data-milestone="2">
+                        <!-- Left Spacer (Desktop) -->
+                        <div class="hidden md:block w-5/12"></div>
+                        
+                        <!-- Center Circle -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 gradient-pink rounded-full flex items-center justify-center shadow-lg z-10 milestone-circle">
+                            <span class="text-white font-bold text-lg">2</span>
+                            <div class="absolute inset-0 gradient-pink rounded-full animate-ping opacity-30"></div>
+                        </div>
+                        
+                        <!-- Right Content (Desktop) -->
+                        <div class="w-full md:w-5/12  ml-44 timeline-content-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-brain text-purple-600"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800">AI Model Training</h3>
+                                </div>
+                                <p class="text-gray-600 mb-4">Developed and trained deep learning models with 94% accuracy using machine learning and image processing</p>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">Complete</span>
+                                    <span class="text-sm text-gray-500">March 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone 3 -->
+                    <div class="relative flex items-center timeline-item opacity-0" data-milestone="3">
+                        <!-- Left Content (Desktop) -->
+                        <div class="w-full md:w-5/12 md:pr-8 text-right timeline-content-left">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="flex items-center justify-end mb-4">
+                                    <h3 class="text-xl font-bold text-gray-800 mr-3">Prototype Development</h3>
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-mobile-alt text-emerald-600"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Built responsive web application for real-time recommendations with intuitive UI/UX</p>
+                                <div class="flex items-center justify-end space-x-2">
+                                    <span class="text-sm text-gray-500">May 2024</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Center Circle -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 gradient-pink rounded-full flex items-center justify-center shadow-lg z-10 milestone-circle">
+                            <span class="text-white font-bold text-lg">3</span>
+                            <div class="absolute inset-0 gradient-pink rounded-full animate-ping opacity-30"></div>
+                        </div>
+                        
+                        <!-- Right Spacer (Desktop) -->
+                        <div class="hidden md:block w-5/12 "></div>
+                    </div>
+                    
+                    <!-- Milestone 4 -->
+                    <div class="relative flex items-center timeline-item opacity-0" data-milestone="4">
+                        <!-- Left Spacer (Desktop) -->
+                        <div class="hidden md:block w-5/12 "></div>
+                        
+                        <!-- Center Circle -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg z-10 milestone-circle">
+                            <span class="text-white font-bold text-lg">4</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse opacity-50"></div>
+                        </div>
+                        
+                        <!-- Right Content (Desktop) -->
+                        <div class="w-full md:w-5/12 ml-44 timeline-content-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-users text-orange-600"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800">User Testing</h3>
+                                </div>
+                                <p class="text-gray-600 mb-4">Conducting extensive user testing with about 30 participants across diverse demographics</p>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-semibold rounded-full animate-pulse">In Progress</span>
+                                    <span class="text-sm text-gray-500">July 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Downloads</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Access all research documents, checklist submissions, and presentation materials.
+        </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+        <!-- Research Docs -->
+        <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-book text-pink-500 mr-3"></i>
+            Research Docs
+            </h3>
+            <div class="space-y-4">
+            <a href="https://drive.google.com/file/d/1mS-rVML36N2lMS-WTVHLTRRsGx_y9VLy/view?usp=sharing" target="_blank" class="group download-card bg-pink-50 hover:bg-pink-100">
+                <i class="fas fa-file-alt text-white bg-pink-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-pink-600">Topic Assessment</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/file/d/1a-6Ay6mvmkfZLKtArpx6rQmtF5r2PTqr/view?usp=sharing" target="_blank" class="group download-card bg-pink-50 hover:bg-pink-100">
+                <i class="fas fa-file-pdf text-white bg-pink-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-pink-600">Research Paper</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/11UHrcRyVMYKc2PCQVQel7cT4SEmfFM0H?usp=sharing" target="_blank" class="group download-card bg-pink-50 hover:bg-pink-100">
+                <i class="fas fa-folder-open text-white bg-pink-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-pink-600">Project Proposal</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1fOGTcC8pjrQ0GcFKx4lk6eRFtY9LOirs?usp=sharing" target="_blank" class="group download-card bg-pink-50 hover:bg-pink-100">
+                <i class="fas fa-folder-open text-white bg-pink-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-pink-600">Final Reports</h4>
+                </div>
+            </a>
+            </div>
+        </div>
+
+        <!-- Checklist Documents -->
+        <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-clipboard-check text-blue-500 mr-3"></i>
+            Checklist Documents
+            </h3>
+            <div class="space-y-4">
+            <a href="https://drive.google.com/drive/folders/1wFMMV5d9gnZoSU_zrJIfAuOVjIUocD1R?usp=sharing" target="_blank" class="group download-card bg-blue-50 hover:bg-blue-100">
+                <i class="fas fa-check-square text-white bg-blue-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-blue-600">Check List Documents I</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/170WfY6QhI6Evd20lrG8gz1D4yZ9glg-j?usp=sharing" target="_blank" class="group download-card bg-blue-50 hover:bg-blue-100">
+                <i class="fas fa-check-square text-white bg-blue-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-blue-600">Check List Documents II</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1Cg6pQQR3jTOBrUC4pQ689g-LxX6rmxlP?usp=sharing" target="_blank" class="group download-card bg-blue-50 hover:bg-blue-100">
+                <i class="fas fa-check-square text-white bg-blue-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-blue-600">Check List Documents III</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1sLBizgf-krlk4_bkiIPzNZS7MWp5FtEB?usp=sharing" target="_blank" class="group download-card bg-blue-50 hover:bg-blue-100">
+                <i class="fas fa-check-square text-white bg-blue-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-blue-600">Check List Documents IV</h4>
+                </div>
+            </a>
+            </div>
+        </div>
+
+        <!-- Presentations -->
+        <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-chalkboard text-green-500 mr-3"></i>
+            Presentations
+            </h3>
+            <div class="space-y-4">
+            <a href="https://drive.google.com/drive/folders/16zcM2H0dUm24RdkH4Jyg_1j_5bTZ9OZX?usp=sharing" target="_blank" class="group download-card bg-green-50 hover:bg-green-100">
+                <i class="fas fa-play-circle text-white bg-green-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-green-600">Proposal Presentation</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1mTSBCI_0A0aFGaLYcrR37V20nWPkFjQ6?usp=sharing" target="_blank" class="group download-card bg-green-50 hover:bg-green-100">
+                <i class="fas fa-play-circle text-white bg-green-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-green-600">Progress Presentation I</h4>
+                </div>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1sHAxjpbPjfbYpVwXGsPAhjB1N_6xfIQK?usp=sharing" target="_blank" class="group download-card bg-green-50 hover:bg-green-100">
+                <i class="fas fa-play-circle text-white bg-green-500"></i>
+                <div>
+                <h4 class="font-semibold group-hover:text-green-600">Progress Presentation II</h4>
+                </div>
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Our Team Section -->
+    <section id="team" class="py-20 gradient-light-pink">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Our Research Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Meet the brilliant minds behind the AI-driven cosmetic recommendation revolution.
+                </p>
+            </div>
+
+            <!-- Supervisors Row -->
+            <div class="flex flex-col md:flex-row justify-center mb-20">
+                <!-- Supervisor -->
+                <div class="text-center team-card max-w-xs mx-auto ">
+                    <div class="mb-6">
+                        <img src="assets/img1.jpg" alt="Ms. Buddhima Attanayake" class="w-40 h-64 object-cover rounded-2xl mx-auto shadow-lg">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Ms. Buddhima Attanayake</h3>
+                    <p class="text-pink-600 font-semibold mb-1">Supervisor</p>
+                    <p class="text-gray-700 text-sm">Sri Lanka Institute of Information Technology<br>Department of Information Systems Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">Email: buddhima.a@sliit.lk</p>
+                </div>
+
+                <!-- Co-Supervisor -->
+                <div class="text-center team-card max-w-xs mx-auto ml-8">
+                    <div class="mb-6">
+                        <img src="assets/img2.jpg" alt="Prof. Anuradha Jayakody" class="w-40 h-64 object-cover rounded-2xl mx-auto shadow-lg">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Prof. Anuradha Jayakody</h3>
+                    <p class="text-pink-600 font-semibold mb-1">Co-Supervisor</p>
+                    <p class="text-gray-700 text-sm">Sri Lanka Institute of Information Technology<br>Department of Information Systems Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">Email: anuradha.j@sliit.lk</p>
+                </div>
+            </div>
+
+            <!-- Researchers Row -->
+            <div class="grid md:grid-cols-3 gap-8 ">
+                <!-- Researcher 1 -->
+                <div class="text-center team-card">
+                    <div class="mb-6">
+                        <img src="assets/navoda.jpeg" alt="Abeygunawardhana G.N.D" class="w-40 h-64 object-cover rounded-xl mx-auto shadow-lg">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Abeygunawardhana G.N.D</h3>
+                    <p class="text-pink-600 font-semibold mb-1">Group Member</p>
+                    <p class="text-gray-700 text-sm">Undergraduate<br>Sri Lanka Institute of Information Technology<br>Department of Information Systems Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">Email: it21222504@my.sliit.lk</p>
+                    <a href="https://www.linkedin.com/in/gemini-navoda-39a761215" target="_blank" class="text-blue-500 text-sm">LinkedIn</a>
+                </div>
+
+                <!-- Researcher 2 -->
+                <div class="text-center team-card">
+                    <div class="mb-6">
+                        <img src="assets/kavisha.jpg" alt="Rathnasiri K.K.L" class="w-40 h-64 object-cover rounded-xl mx-auto shadow-lg">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Rathnasiri K.K.L</h3>
+                    <p class="text-pink-600 font-semibold mb-1">Group Member</p>
+                    <p class="text-gray-700 text-sm">Undergraduate<br>Sri Lanka Institute of Information Technology<br>Department of Information Systems Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">Email: it21178740@my.sliit.lk</p>
+                    <a href="https://www.linkedin.com/in/kavisha-lakmini-61896a217/" target="_blank" class="text-blue-500 text-sm">LinkedIn</a>
+                </div>
+
+                <!-- Researcher 3 -->
+                <div class="text-center team-card">
+                    <div class="mb-6">
+                        <img src="assets/maneesha.jpeg" alt="D.M.P.W Kaluarachchi" class="w-40 h-64 object-cover rounded-xl mx-auto shadow-lg">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">D.M.P.W Kaluarachchi</h3>
+                    <p class="text-pink-600 font-semibold mb-1">Group Member</p>
+                    <p class="text-gray-700 text-sm">Undergraduate<br>Sri Lanka Institute of Information Technology<br>Department of Information Systems Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">Email: it21175220@my.sliit.lk</p>
+                    <a href="https://www.linkedin.com/in/maneesha-pramodini-aa1a66217/" target="_blank" class="text-blue-500 text-sm">LinkedIn</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to collaborate or learn more about our research? Get in touch with our team.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300" placeholder="Enter your full name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300" placeholder="Enter your email address">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300" placeholder="Enter the subject">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300" placeholder="Tell us about your inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full gradient-pink text-white font-semibold py-4 px-6 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Email</h3>
+                                <p class="text-gray-600">gnavoda3@gmail.com</p>
+                                <!-- <p class="text-gray-600">contact@glammatch.com</p> -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Phone</h3>
+                                <p class="text-gray-600">+94 74 085 3712</p>
+                                <!-- <p class="text-gray-600">+94 72 3432125</p> -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-pink rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Address</h3>
+                                <p class="text-gray-600">Sri Lanka Institute of Information Technology, <br>Malabe, Colombo Greater, <br>Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Follow Our Research</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 gradient-pink rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-brain text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold">GlamMatch</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Revolutionizing beauty through artificial intelligence and personalized recommendations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#scope" class="text-gray-400 hover:text-white transition-colors duration-300">Project Scope</a></li>
+                        <li><a href="#milestones" class="text-gray-400 hover:text-white transition-colors duration-300">Milestones</a></li>
+                        <li><a href="#downloads" class="text-gray-400 hover:text-white transition-colors duration-300">Downloads</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Research -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Research</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Publications</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Datasets</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">API Documentation</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition-colors duration-300">Collaborations</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            gnavoda3@gmail.com
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +94 74 085 3712
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Kadawatha, Colombo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 GlamMatch Research Project. All rights reserved. | 
+                    <a href="#" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">Privacy Policy</a> | 
+                    <a href="#" class="text-pink-400 hover:text-pink-300 transition-colors duration-300">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 gradient-pink rounded-full shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('bg-white/95');
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Hero section animations
+        window.addEventListener('load', () => {
+            const heroTitle = document.getElementById('hero-title');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            const heroCta = document.getElementById('hero-cta');
+            
+            setTimeout(() => {
+                heroTitle.classList.remove('opacity-0');
+                heroTitle.classList.add('animate-fade-in-up');
+            }, 300);
+            
+            setTimeout(() => {
+                heroSubtitle.classList.remove('opacity-0');
+                heroSubtitle.classList.add('animate-fade-in-up');
+            }, 600);
+            
+            setTimeout(() => {
+                heroCta.classList.remove('opacity-0');
+                heroCta.classList.add('animate-fade-in-up');
+            }, 900);
+        });
+
+        // Particle animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.scope-card, .milestone-card, .team-card, .download-section, .contact-form, .contact-info').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message (you would typically send the data to a server here)
+            const button = contactForm.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+            button.classList.add('bg-green-500');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-500');
+                contactForm.reset();
+            }, 3000);
+        });
+
+        // Add custom animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-in-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .animate-fade-in-up {
+                animation: fade-in-up 0.8s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+        // Timeline Animation - ADD to existing JavaScript
+function animateTimeline() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineLine = document.querySelector('.timeline-line');
+    
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, index * 200);
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
+    });
+    
+    // Animate timeline line
+    const lineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-progress');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    if (timelineLine) {
+        lineObserver.observe(timelineLine);
+    }
+}
+
+// Call the function after DOM loads - ADD this line to your existing window.addEventListener('load', ...)
+document.addEventListener('DOMContentLoaded', animateTimeline);
+    </script>
+</body>
+</html>
